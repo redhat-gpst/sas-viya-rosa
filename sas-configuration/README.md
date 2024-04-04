@@ -109,6 +109,22 @@ ip-10-0-0-99.us-east-2.compute.internal    <none>                   <none>      
 ## Install additional tooling (on Jumphost)
 
 ```shell
+# kubectl and/or oc
+sudo yum install -y kubectl # make sure the version matches your ROSA version
+# for oc, see here: https://access.redhat.com/downloads/content/290
+
+# kustomize
+opsys=linux  # or darwin, or windows
+kvers=5.1.1  # kustomize version
+arch=amd64   # linux architecture
+release_url=https://api.github.com/repos/kubernetes-sigs/kustomize/releases/tags/kustomize%2Fv${kvers}
+curl -s $release_url |  grep browser_download.*${opsys}_${arch} |  cut -d '"' -f 4 |  sort -V | tail -n 1 |  xargs curl -sLO
+
+tar xvzf kustomize_*_linux_amd64.tar.gz
+sudo mv kustomize /usr/local/bin/
+kustomize version # check
+rm -f kustomize_*_linux_amd64.tar.gz
+
 # jq and others
 sudo yum install -y mlocate vim wget git jq zip unzip tmux
 
