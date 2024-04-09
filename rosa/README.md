@@ -282,6 +282,13 @@ rosa describe machinepool --cluster=sasviya cas-machinepool
 
 4. Install the AWS EFS CSI Driver.
 
+![image](https://github.com/redhat-gpst/sas-viya-rosa/assets/48925593/2df370fc-1c06-4d0d-896c-363153469d58)
+
+
+## Install cert-utils-operator.
+
+1. From OperatorHub, search on cert-utils.
+
 
 
 
