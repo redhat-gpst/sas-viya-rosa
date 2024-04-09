@@ -201,6 +201,88 @@ rosa create operator-roles --prefix "sasviya-z5sz" --oidc-config-id "29gl5vkdp33
 ![image](https://github.com/redhat-gpst/sas-viya-rosa/assets/48925593/8e953163-847f-4b91-af33-4ed0a116f96c)
 
 
+### Cluster Creation Progress
+
+![image](https://github.com/redhat-gpst/sas-viya-rosa/assets/48925593/62144371-f591-4de9-8b1d-96870c80c2a0)
+
+![image](https://github.com/redhat-gpst/sas-viya-rosa/assets/48925593/4dffeb39-d16e-41a9-9ea1-3b99c2abf094)
+
+![image](https://github.com/redhat-gpst/sas-viya-rosa/assets/48925593/20eabcf8-41d3-4e9e-b579-f31a2aa699b8)
+
+### Cluster Creation Completion
+
+![image](https://github.com/redhat-gpst/sas-viya-rosa/assets/48925593/8e00093c-8306-4017-983b-a16d3fba2a66)
+![image](https://github.com/redhat-gpst/sas-viya-rosa/assets/48925593/72c68772-6b5a-41bb-8b6d-dfcb193cae48)
+
+
+# ROSA Post-install configuration
+
+## Create four additional machine pools for use with SAS Viya. 
+Sizing recommendations for OpenShift; based on the minimum resource requirements for a small deployment of SAS Viya. 
+[Creating machine pools](https://docs.openshift.com/rosa/rosa_cluster_admin/rosa_nodes/rosa-managing-worker-nodes.html#creating_a_machine_pool_rosa-managing-worker-nodes)
+
+1. Create a CAS machine pool called `cas-machinepool` that uses the `r5.2xlarge` instance type and has 3 compute (also known as worker) node replicas, adding the workload-specific labels and taints:
+
+```shell
+export ROSA_CLUSTER_NAME=sasviya
+rosa create machinepool --cluster=$ROSA_CLUSTER_NAME \
+      --name=cas-machinepool --replicas=3 \
+      --instance-type=r5.2xlarge \
+      --labels=workload.sas.com/class=cas \
+      --taints=workload.sas.com/class=cas:NoSchedule
+```
+
+2. Create a Compute machine pool called `compute-machinepool` that uses the `r5.xlarge` instance type with autoscaling enabled. The minimum compute node limit is 3 and the maximum is 6 overall. This example also adds the workload-specific labels and taints:
+
+```shell
+rosa create machinepool --cluster=$ROSA_CLUSTER_NAME \
+      --name=compute-machinepool  --enable-autoscaling \
+      --min-replicas=3 --max-replicas=6 \
+      --instance-type=r5.xlarge \
+      --labels=workload.sas.com/class=compute \
+      --taints=workload.sas.com/class=compute:NoSchedule
+```
+
+3. Create the remaining machine pools `stateless-machinepool` and `stateful-machinepool` using the `r5.4xlarge` and `r5.2xlarge` instance types and 1 compute node replicas, adding the workload-specific labels and taints:
+
+```shell
+rosa create machinepool --cluster=$ROSA_CLUSTER_NAME \
+      --name=stateless_machinepool --replicas=1 \
+      --instance-type=r5.4xlarge \
+      --labels=workload.sas.com/class=stateless \
+      --taints=workload.sas.com/class=stateless:NoSchedule
+--taints=workload.sas.com/class=stateless:NoSchedule,workload.sas.com/class=stateful:NoSchedule
+
+rosa create machinepool --cluster=$ROSA_CLUSTER_NAME \
+      --name=stateful_machinepool --replicas=1 \
+      --instance-type=r5.2xlarge \
+      --labels=workload.sas.com/class=stateful \
+      --taints=workload.sas.com/class=stateful:NoSchedule
+ --taints=workload.sas.com/class=stateful:NoSchedule,workload.sas.com/class=stateless:NoSchedule
+```
+
+4. Verify your machine pools:
+
+You can list all machine pools on your cluster or describe individual machine pools.
+
+```shell
+rosa list machinepools --cluster=sasviya
+
+rosa describe machinepool --cluster=sasviya cas-machinepool
+```
+
+
+## Setting up the AWS EFS CSI Driver Operator.
+
+1. Install the [AWS EFS CSI Driver Operator](https://github.com/openshift/aws-efs-csi-driver-operator) (a Red Hat operator).
+
+2. If you are using AWS EFS with AWS Secure Token Service (STS), obtain a role Amazon Resource Name (ARN) for STS. This is required for installing the AWS EFS CSI Driver Operator.
+
+3. Install the AWS EFS CSI Driver Operator.
+
+4. Install the AWS EFS CSI Driver.
+
+
 
 
 
