@@ -305,7 +305,7 @@ Learning path • 15 resources • 2 hrs and 49 mins • Published on May 22, 20
 ![image](https://github.com/redhat-gpst/sas-viya-rosa/assets/48925593/7da3c1a4-572e-43bf-8ed9-9bb6ddd84d90)
 
 ```shell
-rosa create operator-roles --prefix "sasviya-z5sz" --oidc-config-id "29gl5vkdp33gl7qjjbrm8el2vc1oid62" --hosted-cp --installer-role-arn arn:aws:iam::771361553200:role/ManagedOpenShift-HCP-ROSA-Installer-Role
+rosa create operator-roles --prefix "sasviya-z5sz" --oidc-config-id "29gl5vkdp33gl7qjjbrm8el2vc1oid62" --hosted-cp --installer-role-arn arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-HCP-ROSA-Installer-Role
 ```
 
 ### STEP 6: Cluster Updates
