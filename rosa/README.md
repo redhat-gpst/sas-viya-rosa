@@ -6,7 +6,7 @@
 - Creating OIDC configuration
 - Creating Operator roles
 
-[SAS Viya on AWS ROSA - ROSA deployment notes](https://github.com/redhat-gpst/sas-viya-rosa/edit/main/rosa/README.md#sas-viya-on-aws-rosa---rosa-prerequisites)
+[SAS Viya on AWS ROSA - ROSA deployment notes](https://github.com/redhat-gpst/sas-viya-rosa/main/rosa/README.md#sas-viya-on-aws-rosa---rosa-prerequisites)
 - Create a ROSA cluster using the CLI
 - Create a ROSA cluster using the web ui on the Hybrid Cloud Console.
   - STEP 1: Control Plane
@@ -19,7 +19,7 @@
 - Cluster Creation Progress
 - Cluster Creation Completion
 
-[ROSA Post-install configuration](https://github.com/redhat-gpst/sas-viya-rosa/edit/main/rosa/README.md#sas-viya-on-aws-rosa---rosa-prerequisites)
+[ROSA Post-install configuration](https://github.com/redhat-gpst/sas-viya-rosa/main/rosa/README.md#sas-viya-on-aws-rosa---rosa-prerequisites)
 - Create four additional machine pools for use with SAS Viya.
 - Setting up the AWS EFS CSI Driver Operator.
 - Install cert-utils-operator.
