@@ -2,6 +2,7 @@
 
 [SAS Viya on AWS ROSA - ROSA prerequisites](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#sas-viya-on-aws-rosa---rosa-prerequisites)
 - Creating a Virtual Private Cloud (VPC) using Terraform
+- Enable ROSA
 - Creating Account-wide roles
 - Creating OIDC configuration
 - Creating Operator roles
@@ -79,6 +80,24 @@ Sample output
 ```shell
 $ subnet-0a6a57e0f784171aa,subnet-078e84e5b10ecf5b0
 ```
+
+
+## Enable ROSA
+
+To create a ROSA cluster, you must first enable the ROSA service in the AWS ROSA console. The AWS ROSA console verifies if your AWS account has the necessary AWS Marketplace permissions, service quotas, and the Elastic Load Balancing (ELB) service-linked role named AWSServiceRoleForElasticLoadBalancing. 
+If any of these prerequisites are missing, the console provides guidance on how to configure your account to meet the prerequisites.
+
+1. Navigate to the [ROSA console](https://console.aws.amazon.com/rosa).
+2. Choose Get started.
+3. On the Verify ROSA prerequisites page, select I agree to share my contact information with Red Hat.
+4. Choose Enable ROSA .
+5. Once the page has verified your service quotas meet ROSA prerequisites and the ELB service-linked role is created, open a new terminal session to create your first ROSA cluster using the ROSA CLI.
+
+Sample output
+![image](https://github.com/redhat-gpst/sas-viya-rosa/assets/48925593/6fc41552-301d-41d2-84a3-4f8b9efaba31)
+
+![image](https://github.com/redhat-gpst/sas-viya-rosa/assets/48925593/e6df2977-0661-4749-8ad5-3617e2b993ed)
+
 
 
 ## Creating Account-wide roles
