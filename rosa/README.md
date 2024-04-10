@@ -118,10 +118,10 @@ I: AWS quota ok. If cluster installation fails, validate actual AWS resource usa
 I: Verifying whether OpenShift command-line tool is available...
 I: Current OpenShift Client Version: 4.14.12
 I: Creating account roles
-I: Creating hosted CP account roles using 'arn:aws:iam::771361553200:user/open-environment-l6sw8-admin'
-I: Created role 'ManagedOpenShift-HCP-ROSA-Installer-Role' with ARN 'arn:aws:iam::771361553200:role/ManagedOpenShift-HCP-ROSA-Installer-Role'
-I: Created role 'ManagedOpenShift-HCP-ROSA-Support-Role' with ARN 'arn:aws:iam::771361553200:role/ManagedOpenShift-HCP-ROSA-Support-Role'
-I: Created role 'ManagedOpenShift-HCP-ROSA-Worker-Role' with ARN 'arn:aws:iam::771361553200:role/ManagedOpenShift-HCP-ROSA-Worker-Role'
+I: Creating hosted CP account roles using 'arn:aws:iam::XXXXXXXXXXXX:user/open-environment-l6sw8-admin'
+I: Created role 'ManagedOpenShift-HCP-ROSA-Installer-Role' with ARN 'arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-HCP-ROSA-Installer-Role'
+I: Created role 'ManagedOpenShift-HCP-ROSA-Support-Role' with ARN 'arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-HCP-ROSA-Support-Role'
+I: Created role 'ManagedOpenShift-HCP-ROSA-Worker-Role' with ARN 'arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-HCP-ROSA-Worker-Role'
 ``` 
 
 
@@ -142,9 +142,9 @@ I: Setting up managed OIDC configuration
 I: To create Operator Roles for this OIDC Configuration, run the following command and remember to replace <user-defined> with a prefix of your choice:
 	rosa create operator-roles --prefix <user-defined> --oidc-config-id 29hejou9vg7ltren6mdsnpt2k015eqp3
 If you are going to create a Hosted Control Plane cluster please include '--hosted-cp'
-I: Creating OIDC provider using 'arn:aws:iam::771361553200:user/open-environment-l6sw8-admin'
+I: Creating OIDC provider using 'arn:aws:iam::XXXXXXXXXXXX:user/open-environment-l6sw8-admin'
 ? Create the OIDC provider? Yes
-I: Created OIDC provider with ARN 'arn:aws:iam::771361553200:oidc-provider/oidc.op1.openshiftapps.com/29hejou9vg7ltren6mdsnpt2k015eqp3'
+I: Created OIDC provider with ARN 'arn:aws:iam::XXXXXXXXXXXX:oidc-provider/oidc.op1.openshiftapps.com/29hejou9vg7ltren6mdsnpt2k015eqp3'
 
 2. Save the OIDC configuration ID as a variable to use later. Run the following command to save the variable:
 ```shell
@@ -192,6 +192,83 @@ rosa create cluster --cluster-name=$ROSA_CLUSTER_NAME \
       --operator-roles-prefix <operator-role-prefix> \
       --oidc-config-id $OIDC_ID \
       --subnet-ids=$SUBNET_IDS
+```
+
+Sample output
+```shell
+rosa create cluster --cluster-name=rosa-sasviya --sts --mode=auto \
+     --hosted-cp --operator-roles-prefix ManagedOpenShift \
+     --oidc-config-id 29gl5vkdp33gl7qjjbrm8el2vc1oid62 \
+     --subnet-ids=subnet-0dfeff8ef81ead03b,subnet-074424179474a07d9
+
+rm8el2vc1oid62 --subnet-ids=subnet-0dfeff8ef81ead03b,subnet-074424179474a07d9
+I: Using '771361553200' as billing account
+I: Using 'XXXXXXXXXXXX' as billing account
+I: To use a different billing account, add --billing-account xxxxxxxxxx to previous command
+I: Using arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-HCP-ROSA-Installer-Role for the Installer role
+I: Using arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-HCP-ROSA-Worker-Role for the Worker role
+I: Using arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-HCP-ROSA-Support-Role for the Support role
+I: Reusable OIDC Configuration detected. Validating trusted relationships to operator roles: 
+I: Creating cluster 'rosa-sasviya'
+I: To view a list of clusters and their status, run 'rosa list clusters'
+I: Cluster 'rosa-sasviya' has been created.
+I: Once the cluster is installed you will need to add an Identity Provider before you can login into the cluster. See 'rosa create idp --help' for more information.
+
+Name:                       rosa-sasviya
+ID:                         29glkgp83eut7jvmcp0ntfvqhum5p07h
+External ID:                477a8eba-69e7-450a-be9e-54c4f56b40c6
+Control Plane:              ROSA Service Hosted
+OpenShift Version:          4.14.11
+Channel Group:              stable
+DNS:                        Not ready
+AWS Account:                XXXXXXXXXXXX
+AWS Billing Account:        XXXXXXXXXXXX
+API URL:                    
+Console URL:                
+Region:                     us-east-2
+Availability:
+ - Control Plane:           MultiAZ
+ - Data Plane:              SingleAZ
+Nodes:
+ - Compute (desired):       2
+ - Compute (current):       0
+Network:
+ - Type:                    OVNKubernetes
+ - Service CIDR:            172.30.0.0/16
+ - Machine CIDR:            10.0.0.0/16
+ - Pod CIDR:                10.128.0.0/14
+ - Host Prefix:             /23
+ - Subnets:                 subnet-0dfeff8ef81ead03b, subnet-074424179474a07d9
+EC2 Metadata Http Tokens:   optional
+STS Role ARN:               arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-HCP-ROSA-Installer-Role
+Support Role ARN:           arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-HCP-ROSA-Support-Role
+Instance IAM Roles:
+ - Worker:                  arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-HCP-ROSA-Worker-Role
+Operator IAM Roles:
+ - arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-openshift-ingress-operator-cloud-credentials
+ - arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-openshift-cluster-csi-drivers-ebs-cloud-credent
+ - arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-openshift-cloud-network-config-controller-cloud
+ - arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-kube-system-control-plane-operator
+ - arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-kube-system-kms-provider
+ - arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-kube-system-kube-controller-manager
+ - arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-kube-system-capa-controller-manager
+ - arn:aws:iam::XXXXXXXXXXXX:role/ManagedOpenShift-openshift-image-registry-installer-cloud-creden
+Managed Policies:           Yes
+State:                      waiting (Waiting for user action)
+Private:                    No
+Created:                    Feb 19 2024 19:13:11 UTC
+User Workload Monitoring:   Enabled
+Details Page:               https://console.redhat.com/openshift/details/s/2cbAdM4nAuPt7pKtwXDcv60gMVt
+OIDC Endpoint URL:          https://oidc.op1.openshiftapps.com/29gl5vkdp33gl7qjjbrm8el2vc1oid62 (Managed)
+Audit Log Forwarding:       Disabled
+
+I: Preparing to create operator roles.
+I: Reusable OIDC Configuration detected. Validating trusted relationships to operator roles: 
+I: Operator Roles already exists
+I: Preparing to create OIDC Provider.
+I: OIDC provider already exists
+I: To determine when your cluster is Ready, run 'rosa describe cluster -c rosa-sasviya'.
+I: To watch your cluster installation logs, run 'rosa logs install -c rosa-sasviya --watch'.
 ```
 
 ## Create a ROSA cluster using the web ui on the Hybrid Cloud Console. 
