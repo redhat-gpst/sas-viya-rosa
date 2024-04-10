@@ -1,6 +1,6 @@
 # [TOC]
 
-[SAS Viya on AWS ROSA - ROSA prerequisites](https://github.com/redhat-gpst/sas-viya-rosa/edit/main/rosa/README.md#sas-viya-on-aws-rosa---rosa-prerequisites)
+[SAS Viya on AWS ROSA - ROSA prerequisites](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#sas-viya-on-aws-rosa---rosa-prerequisites)
 - Creating a Virtual Private Cloud (VPC) using Terraform
 - Creating Account-wide roles
 - Creating OIDC configuration
