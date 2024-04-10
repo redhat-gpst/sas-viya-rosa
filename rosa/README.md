@@ -312,7 +312,7 @@ Cluster ID:                 29glkgp83eut7jvmcp0ntfvqhum5p07h
 Autoscaling:                No
 Desired replicas:           3
 Current replicas:           0
-Instance type:              r5.2xlarge
+Instance type:              r5d.2xlarge
 Labels:                     workload.sas.com/class=cas
 Taints:                     workload.sas.com/class=cas:NoSchedule
 Availability zone:          us-east-2a
