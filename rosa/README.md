@@ -395,7 +395,7 @@ default          No           2/2       m5.2xlarge                              
 cas-pool         No           3/3       r5d.2xlarge    workload.sas.com/class=cas        workload.sas.com/class=cas:NoSchedule                         us-east-2a         subnet-074424179474a07d9  4.14.11  Yes         
 compute-pool     Yes          1/3       r5d.xlarge     workload.sas.com/class=compute    workload.sas.com/class=compute:NoSchedule                     us-east-2a         subnet-074424179474a07d9  4.14.11  Yes
 stateful-pool    No           1/1       r5.2xlarge     workload.sas.com/class=stateful   workload.sas.com/class=stateful:NoSchedule,workload.sas.com/class=stateless:NoSchedule    us-east-2a         subnet-074424179474a07d9  4.14.11  Yes
-stateless-pool   No           1/1       r5.4xlarge     workload.sas.com/class=stateless  workload.sas.com/class=stateless:NoSchedule,workload.sas.com/class=stateful:NoSchedule   us-east-2a         subnet-074424179474a07d9  4.14.11  Yes
+stateless-pool   No           1/1       r5.4xlarge     workload.sas.com/class=stateless  workload.sas.com/class=stateless:NoSchedule,workload.sas.com/class=stateful:NoSchedule    us-east-2a         subnet-074424179474a07d9  4.14.11  Yes
 
 ```
 
