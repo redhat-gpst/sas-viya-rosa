@@ -243,44 +243,44 @@ rosa create operator-roles --prefix "sasviya-z5sz" --oidc-config-id "29gl5vkdp33
 Sizing recommendations for OpenShift; based on the minimum resource requirements for a small deployment of SAS Viya. 
 [Creating machine pools](https://docs.openshift.com/rosa/rosa_cluster_admin/rosa_nodes/rosa-managing-worker-nodes.html#creating_a_machine_pool_rosa-managing-worker-nodes)
 
-1. Create a CAS machine pool called `cas-machinepool` that uses the `r5.2xlarge` instance type and has 3 compute (also known as worker) node replicas, adding the workload-specific labels and taints:
+1. Create a CAS machine pool called `cas-pool` that uses the `r5.2xlarge` instance type and has 3 compute (also known as worker) node replicas, adding the workload-specific labels and taints:
 
 ```shell
 export ROSA_CLUSTER_NAME=sasviya
 rosa create machinepool --cluster=$ROSA_CLUSTER_NAME \
-      --name=cas-machinepool --replicas=3 \
+      --name=cas-pool --replicas=3 \
       --instance-type=r5.2xlarge \
       --labels=workload.sas.com/class=cas \
       --taints=workload.sas.com/class=cas:NoSchedule
 ```
 
-2. Create a Compute machine pool called `compute-machinepool` that uses the `r5.xlarge` instance type with autoscaling enabled. The minimum compute node limit is 3 and the maximum is 6 overall. This example also adds the workload-specific labels and taints:
+2. Create a Compute machine pool called `compute-pool` that uses the `r5.xlarge` instance type with autoscaling enabled. The minimum compute node limit is 3 and the maximum is 6 overall. This example also adds the workload-specific labels and taints:
 
 ```shell
 rosa create machinepool --cluster=$ROSA_CLUSTER_NAME \
-      --name=compute-machinepool  --enable-autoscaling \
+      --name=compute-pool  --enable-autoscaling \
       --min-replicas=3 --max-replicas=6 \
       --instance-type=r5.xlarge \
       --labels=workload.sas.com/class=compute \
       --taints=workload.sas.com/class=compute:NoSchedule
 ```
 
-3. Create the remaining machine pools `stateless-machinepool` and `stateful-machinepool` using the `r5.4xlarge` and `r5.2xlarge` instance types and 1 compute node replicas, adding the workload-specific labels and taints:
+3. Create the remaining machine pools `stateless-pool` and `stateful-pool` using the `r5.4xlarge` and `r5.2xlarge` instance types and 1 compute node replicas, adding the workload-specific labels and taints:
 
 ```shell
 rosa create machinepool --cluster=$ROSA_CLUSTER_NAME \
-      --name=stateless_machinepool --replicas=1 \
-      --instance-type=r5.4xlarge \
-      --labels=workload.sas.com/class=stateless \
-      --taints=workload.sas.com/class=stateless:NoSchedule
---taints=workload.sas.com/class=stateless:NoSchedule,workload.sas.com/class=stateful:NoSchedule
-
-rosa create machinepool --cluster=$ROSA_CLUSTER_NAME \
-      --name=stateful_machinepool --replicas=1 \
+      --name=stateful-pool --replicas=1 \
       --instance-type=r5.2xlarge \
       --labels=workload.sas.com/class=stateful \
-      --taints=workload.sas.com/class=stateful:NoSchedule
- --taints=workload.sas.com/class=stateful:NoSchedule,workload.sas.com/class=stateless:NoSchedule
+      --taints=workload.sas.com/class=stateful:NoSchedule \
+      --taints=workload.sas.com/class=stateful:NoSchedule,workload.sas.com/class=stateless:NoSchedule
+
+rosa create machinepool --cluster=$ROSA_CLUSTER_NAME \
+      --name=stateless-pool --replicas=1 \
+      --instance-type=r5.4xlarge \
+      --labels=workload.sas.com/class=stateless \
+      --taints=workload.sas.com/class=stateless:NoSchedule \
+      --taints=workload.sas.com/class=stateless:NoSchedule,workload.sas.com/class=stateful:NoSchedule
 ```
 
 4. Verify your machine pools:
@@ -289,10 +289,39 @@ You can list all machine pools on your cluster or describe individual machine po
 
 ```shell
 rosa list machinepools --cluster=sasviya
-
-rosa describe machinepool --cluster=sasviya cas-machinepool
 ```
 
+Sample output
+```shell
+ID               AUTOSCALING  REPLICAS  INSTANCE TYPE  LABELS                            TAINTS                                        AVAILABILITY ZONE  SUBNET                    VERSION  AUTOREPAIR  
+cas-pool         No           3/3       r5d.2xlarge    workload.sas.com/class=cas        workload.sas.com/class=cas:NoSchedule         us-east-2a         subnet-074424179474a07d9  4.14.11  Yes         
+compute-pool     Yes          1/3       r5d.xlarge     workload.sas.com/class=compute    workload.sas.com/class=compute:NoSchedule     us-east-2a         subnet-074424179474a07d9  4.14.11  Yes
+stateful-pool    No           1/1       r5.2xlarge     workload.sas.com/class=stateful   workload.sas.com/class=stateful:NoSchedule    us-east-2a         subnet-074424179474a07d9  4.14.11  Yes
+stateless-pool   No           1/1       r5.4xlarge     workload.sas.com/class=stateless  workload.sas.com/class=stateless:NoSchedule   us-east-2a         subnet-074424179474a07d9  4.14.11  Yes
+
+```
+
+```shell
+rosa describe machinepool --cluster=sasviya cas-pool
+```
+
+Sample output
+```shell
+ID:                         cas-pool
+Cluster ID:                 29glkgp83eut7jvmcp0ntfvqhum5p07h
+Autoscaling:                No
+Desired replicas:           3
+Current replicas:           0
+Instance type:              r5.2xlarge
+Labels:                     workload.sas.com/class=cas
+Taints:                     workload.sas.com/class=cas:NoSchedule
+Availability zone:          us-east-2a
+Subnet:                     subnet-074424179474a07d9
+Version:                    4.14.11
+Autorepair:                 Yes
+Tuning configs:             
+Message:                    WaitingForAvailableMachines: NodeProvisioning
+```
 
 ## Setting up the AWS EFS CSI Driver Operator.
 
