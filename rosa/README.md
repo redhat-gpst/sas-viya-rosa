@@ -1,11 +1,11 @@
 # [TOC]
 
 [SAS Viya on AWS ROSA - ROSA prerequisites](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#sas-viya-on-aws-rosa---rosa-prerequisites)
-- Enable ROSA
+- [Enable ROSA](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#enable-rosa)
 - [Creating a Virtual Private Cloud (VPC) using Terraform](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#creating-a-virtual-private-cloud-vpc-using-terraform)
-- Creating Account-wide roles
-- Creating OIDC configuration
-- Creating Operator roles
+- [Creating Account-wide roles](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#creating-account-wide-roles)
+- [Creating OIDC configuration](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#creating-oidc-configuration)
+- [Creating Operator roles](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#creating-operator-roles)
 
 [SAS Viya on AWS ROSA - ROSA deployment notes](https://github.com/redhat-gpst/sas-viya-rosa/main/rosa/README.md#sas-viya-on-aws-rosa---rosa-prerequisites)
 - Create a ROSA cluster using the CLI
