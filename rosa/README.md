@@ -437,7 +437,7 @@ Message:                    WaitingForAvailableMachines: NodeProvisioning
 
 ## Configure AWS RDS service.
 
-For our testing, we followed [this process](https://cloud.redhat.com/experts/rosa/sts-rds/), with the following:
+For our testing, we followed [this process](https://cloud.redhat.com/experts/rosa/sts-rds/), along with the following settings:
 
 - PostgreSQL (version PostgreSQL 15 (do not use 16)
 - Production
