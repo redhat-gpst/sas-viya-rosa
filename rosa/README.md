@@ -433,6 +433,22 @@ Message:                    WaitingForAvailableMachines: NodeProvisioning
 
 ![image](https://github.com/redhat-gpst/sas-viya-rosa/assets/48925593/2df370fc-1c06-4d0d-896c-363153469d58)
 
+## Configure AWS RDS service.
+
+For our testing, we followed [this process](https://cloud.redhat.com/experts/rosa/sts-rds/), with the following:
+
+- PostgreSQL (version PostgreSQL 15 (do not use 16)
+- Production
+- Single DB instance
+- Record the master username & password to specify in the SAS Viya deployment
+- Instance: db.m5.xlarge, 4 vCPU, 16GB RAM
+- Storage: General Purpose SSD (gp3)
+- Select same VPC as ROSA, but create a new DB subnet group
+ 
+
+## Configure ROSA to pull images from AWS ECR.
+
+
 
 ## Install cert-utils-operator.
 
