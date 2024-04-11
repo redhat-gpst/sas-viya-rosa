@@ -23,6 +23,8 @@
 [ROSA Post-install configuration](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#rosa-post-install-configuration)
 - [Create four additional machine pools for use with SAS Viya](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#create-four-additional-machine-pools-for-use-with-sas-viya)
 - [Setting up the AWS EFS CSI Driver Operator](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#setting-up-the-aws-efs-csi-driver-operator)
+- [Configure AWS RDS service](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#configure-aws-rds-service)
+- [Configure ROSA to pull images from AWS ECR](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#configure-rosa-to-pull-images-from-aws-ecr)
 - [Install cert-utils-operator](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#install-cert-utils-operator)
 
 # SAS Viya on AWS ROSA - ROSA prerequisites
