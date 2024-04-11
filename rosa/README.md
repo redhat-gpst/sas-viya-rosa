@@ -10,15 +10,15 @@
 [SAS Viya on AWS ROSA - ROSA deployment notes](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#sas-viya-on-aws-rosa---rosa-deployment-notes)
 - [Create a ROSA cluster using the CLI](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#create-a-rosa-cluster-using-the-cli)
 - [Create a ROSA cluster using the web ui on the Hybrid Cloud Console](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#create-a-rosa-cluster-using-the-web-ui-on-the-hybrid-cloud-console)
-  - STEP 1: Control Plane
-  - STEP 2: Accounts and Roles
-  - STEP 3: Cluster Settings
-  - STEP 4: Networking
-  - STEP 5: Cluster Roles and Policies
-  - STEP 6: Cluster Updates
-  - STEP 7: Review and Create
-  - Cluster Creation Progress
-  - Cluster Creation Completion
+  - [STEP 1: Control Plane](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#step-1-control-plane)
+  - [STEP 2: Accounts and Roles](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#step-2-accounts-and-roles)
+  - [STEP 3: Cluster Settings](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#step-3-cluster-settings)
+  - [STEP 4: Networking](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#step-4-networking)
+  - [STEP 5: Cluster Roles and Policies](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#step-5-cluster-roles-and-policies)
+  - [STEP 6: Cluster Updates](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#step-6-cluster-updates)
+  - [STEP 7: Review and Create](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#step-7-review-and-create)
+  - [Cluster Creation Progress](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#cluster-creation-progress)
+  - [Cluster Creation Completion](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#cluster-creation-completion)
 
 [ROSA Post-install configuration](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#rosa-post-install-configuration)
 - [Create four additional machine pools for use with SAS Viya](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#create-four-additional-machine-pools-for-use-with-sas-viya)
