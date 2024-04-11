@@ -7,9 +7,9 @@
 - [Creating OIDC configuration](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#creating-oidc-configuration)
 - [Creating Operator roles](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#creating-operator-roles)
 
-[SAS Viya on AWS ROSA - ROSA deployment notes](https://github.com/redhat-gpst/sas-viya-rosa/main/rosa/README.md#sas-viya-on-aws-rosa---rosa-prerequisites)
-- Create a ROSA cluster using the CLI
-- Create a ROSA cluster using the web ui on the Hybrid Cloud Console.
+[SAS Viya on AWS ROSA - ROSA deployment notes](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#sas-viya-on-aws-rosa---rosa-deployment-notes)
+- [Create a ROSA cluster using the CLI](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#create-a-rosa-cluster-using-the-cli)
+- [Create a ROSA cluster using the web ui on the Hybrid Cloud Console](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#create-a-rosa-cluster-using-the-web-ui-on-the-hybrid-cloud-console)
   - STEP 1: Control Plane
   - STEP 2: Accounts and Roles
   - STEP 3: Cluster Settings
@@ -17,10 +17,10 @@
   - STEP 5: Cluster Roles and Policies
   - STEP 6: Cluster Updates
   - STEP 7: Review and Create
-- Cluster Creation Progress
-- Cluster Creation Completion
+  - Cluster Creation Progress
+  - Cluster Creation Completion
 
-[ROSA Post-install configuration](https://github.com/redhat-gpst/sas-viya-rosa/main/rosa/README.md#sas-viya-on-aws-rosa---rosa-prerequisites)
+[ROSA Post-install configuration](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#rosa-post-install-configuration)
 - Create four additional machine pools for use with SAS Viya.
 - Setting up the AWS EFS CSI Driver Operator.
 - Install cert-utils-operator.
