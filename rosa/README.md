@@ -21,9 +21,9 @@
   - Cluster Creation Completion
 
 [ROSA Post-install configuration](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#rosa-post-install-configuration)
-- Create four additional machine pools for use with SAS Viya.
-- Setting up the AWS EFS CSI Driver Operator.
-- Install cert-utils-operator.
+- [Create four additional machine pools for use with SAS Viya](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#create-four-additional-machine-pools-for-use-with-sas-viya)
+- [Setting up the AWS EFS CSI Driver Operator](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#setting-up-the-aws-efs-csi-driver-operator)
+- [Install cert-utils-operator](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#install-cert-utils-operator)
 
 # SAS Viya on AWS ROSA - ROSA prerequisites
 
@@ -336,7 +336,7 @@ rosa create operator-roles --prefix "sasviya-z5sz" --oidc-config-id "29gl5vkdp33
 
 # ROSA Post-install configuration
 
-## Create four additional machine pools for use with SAS Viya. 
+## Create four additional machine pools for use with SAS Viya.
 Sizing recommendations for OpenShift; based on the minimum resource requirements for a small deployment of SAS Viya. 
 [Creating machine pools](https://docs.openshift.com/rosa/rosa_cluster_admin/rosa_nodes/rosa-managing-worker-nodes.html#creating_a_machine_pool_rosa-managing-worker-nodes)
 
