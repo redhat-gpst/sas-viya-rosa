@@ -10,7 +10,9 @@ Here's a reference diagram showing the ROSA infrastructure with SAS Viya install
 
 ![Architecture overview](architecture.png)
 
+## [ROSA Deployment](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa) 
 
+## [SAS Viya Deployment](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/sas-configuration)
 
 ## License
 
