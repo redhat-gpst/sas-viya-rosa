@@ -425,15 +425,13 @@ Message:                    WaitingForAvailableMachines: NodeProvisioning
 
 ## Setting up the AWS EFS CSI Driver Operator.
 
-1. Install the [AWS EFS CSI Driver Operator](https://github.com/openshift/aws-efs-csi-driver-operator) (a Red Hat operator).
+For our testing, we followed [this process](https://cloud.redhat.com/experts/rosa/aws-efs/) using the single-zone EFS, along with the following settings:
 
-2. If you are using AWS EFS with AWS Secure Token Service (STS), obtain a role Amazon Resource Name (ARN) for STS. This is required for installing the AWS EFS CSI Driver Operator.
+- Single-zone EFS
+- Same VPC as ROSA
+- Dynamic provisioning
+- Throughput mode: Bursting
 
-3. Install the AWS EFS CSI Driver Operator.
-
-4. Install the AWS EFS CSI Driver.
-
-![image](https://github.com/redhat-gpst/sas-viya-rosa/assets/48925593/2df370fc-1c06-4d0d-896c-363153469d58)
 
 ## Configure AWS RDS service.
 
