@@ -439,7 +439,7 @@ Message:                    WaitingForAvailableMachines: NodeProvisioning
 
 For our testing, we followed [this process](https://cloud.redhat.com/experts/rosa/sts-rds/), along with the following settings:
 
-- PostgreSQL (version PostgreSQL 15 (do not use 16)
+- PostgreSQL version 15 (do not use 16)
 - Production
 - Single DB instance
 - Record the master username & password to specify in the SAS Viya deployment
@@ -450,13 +450,15 @@ For our testing, we followed [this process](https://cloud.redhat.com/experts/ros
 
 ## Configure ROSA to pull images from AWS ECR.
 
-
+For our testing, we followed [this process](https://cloud.redhat.com/experts/rosa/ecr/).
 
 ## Install cert-utils-operator.
 
-1. From OperatorHub, search on cert-utils.
+1. From OperatorHub, search on "cert utils". Click on "Cert Utils Operator". 
 
+<img width="1118" alt="image" src="https://github.com/redhat-gpst/sas-viya-rosa/assets/48925593/d09721f2-85f0-452f-b631-50ac434b27ae">
 
+2. Select "Install", then click on "Install".
 
 
 
