@@ -2,31 +2,31 @@
 
 [SAS Viya on AWS ROSA - ROSA prerequisites](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#sas-viya-on-aws-rosa---rosa-prerequisites)
 
-- [Enable ROSA](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#enable-rosa)
-- [Creating a Virtual Private Cloud (VPC) using Terraform](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#creating-a-virtual-private-cloud-vpc-using-terraform)
-- [Creating Account-wide roles](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#creating-account-wide-roles)
-- [Creating OIDC configuration](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#creating-oidc-configuration)
-- [Creating Operator roles](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#creating-operator-roles)
+- [Enable ROSA](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#enable-rosa)
+- [Creating a Virtual Private Cloud (VPC) using Terraform](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#creating-a-virtual-private-cloud-vpc-using-terraform)
+- [Creating Account-wide roles](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#creating-account-wide-roles)
+- [Creating OIDC configuration](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#creating-oidc-configuration)
+- [Creating Operator roles](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#creating-operator-roles)
 
 [SAS Viya on AWS ROSA - ROSA deployment notes](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#sas-viya-on-aws-rosa---rosa-deployment-notes)
-- [Create a ROSA cluster using the CLI](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#create-a-rosa-cluster-using-the-cli)
-- [Create a ROSA cluster using the web ui on the Hybrid Cloud Console](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#create-a-rosa-cluster-using-the-web-ui-on-the-hybrid-cloud-console)
-  - [STEP 1: Control Plane](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#step-1-control-plane)
-  - [STEP 2: Accounts and Roles](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#step-2-accounts-and-roles)
-  - [STEP 3: Cluster Settings](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#step-3-cluster-settings)
-  - [STEP 4: Networking](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#step-4-networking)
-  - [STEP 5: Cluster Roles and Policies](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#step-5-cluster-roles-and-policies)
-  - [STEP 6: Cluster Updates](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#step-6-cluster-updates)
-  - [STEP 7: Review and Create](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#step-7-review-and-create)
-  - [Cluster Creation Progress](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#cluster-creation-progress)
-  - [Cluster Creation Completion](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#cluster-creation-completion)
+- [Create a ROSA cluster using the CLI](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#create-a-rosa-cluster-using-the-cli)
+- [Create a ROSA cluster using the web ui on the Hybrid Cloud Console](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#create-a-rosa-cluster-using-the-web-ui-on-the-hybrid-cloud-console)
+  - [STEP 1: Control Plane](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#step-1-control-plane)
+  - [STEP 2: Accounts and Roles](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#step-2-accounts-and-roles)
+  - [STEP 3: Cluster Settings](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#step-3-cluster-settings)
+  - [STEP 4: Networking](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#step-4-networking)
+  - [STEP 5: Cluster Roles and Policies](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#step-5-cluster-roles-and-policies)
+  - [STEP 6: Cluster Updates](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#step-6-cluster-updates)
+  - [STEP 7: Review and Create](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#step-7-review-and-create)
+  - [Cluster Creation Progress](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#cluster-creation-progress)
+  - [Cluster Creation Completion](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#cluster-creation-completion)
 
 [ROSA Post-install configuration](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#rosa-post-install-configuration)
-- [Create four additional machine pools for use with SAS Viya](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#create-four-additional-machine-pools-for-use-with-sas-viya)
-- [Setting up the AWS EFS CSI Driver Operator](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#setting-up-the-aws-efs-csi-driver-operator)
-- [Configure AWS RDS service](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#configure-aws-rds-service)
-- [Configure ROSA to pull images from AWS ECR](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#configure-rosa-to-pull-images-from-aws-ecr)
-- [Install cert-utils-operator](https://github.com/redhat-gpst/sas-viya-rosa/blob/main/rosa/README.md#install-cert-utils-operator)
+- [Create four additional machine pools for use with SAS Viya](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#create-four-additional-machine-pools-for-use-with-sas-viya)
+- [Setting up the AWS EFS CSI Driver Operator](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#setting-up-the-aws-efs-csi-driver-operator)
+- [Configure AWS RDS service](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#configure-aws-rds-service)
+- [Configure ROSA to pull images from AWS ECR](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#configure-rosa-to-pull-images-from-aws-ecr)
+- [Install cert-utils-operator](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#install-cert-utils-operator)
 
 # SAS Viya on AWS ROSA - ROSA prerequisites
 
@@ -38,7 +38,7 @@ If any of these prerequisites are missing, the console provides guidance on how 
 1. Navigate to the [ROSA console](https://console.aws.amazon.com/rosa).
 2. Choose Get started.
 3. On the Verify ROSA prerequisites page, select I agree to share my contact information with Red Hat.
-4. Choose Enable ROSA .
+4. Choose Enable ROSA.
 5. Once the page has verified your service quotas meet ROSA prerequisites and the ELB service-linked role is created, open a new terminal session to create your first ROSA cluster using the ROSA CLI.
 
 Sample output
