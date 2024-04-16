@@ -157,7 +157,7 @@ export OIDC_ID=29hejou9vg7ltren6mdsnpt2k015eqp3
 ## Creating Operator roles
 
 1. Create the required IAM operator roles, replacing <OIDC_CONFIG_ID> with the OIDC config ID copied previously.
-2. 
+
 **Important**
 You must supply a prefix in <PREFIX_NAME> when creating the Operator roles. Failing to do so produces an error.
 ```shell
@@ -177,7 +177,15 @@ rosa create operator-roles --prefix ManagedOpenShift \
 
 # SAS Viya on AWS ROSA - ROSA deployment notes
 
+Perform a deployment of ROSA using either the CLI **OR** the Web UI.
+
 [TOC]
+
+SAS Viya on AWS ROSA - ROSA deployment notes
+- [Create a ROSA cluster using the CLI](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#create-a-rosa-cluster-using-the-cli)
+
+**OR**
+- [Create a ROSA cluster using the web ui on the Hybrid Cloud Console](https://github.com/redhat-gpst/sas-viya-rosa/tree/main/rosa#create-a-rosa-cluster-using-the-web-ui-on-the-hybrid-cloud-console)
 
 
 
